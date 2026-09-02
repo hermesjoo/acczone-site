@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AccZone — CoD Mobile Accounts</title>
+<link rel="icon" href="favicon.svg">
+<style>
+/* C) BOUTIQUE SHOWROOM — light, premium e-commerce like Apple/Shopify: sticky product
+   grid hero, serif display type, generous whitespace, soft shadows, price-first. */
+:root{--bg:#faf9f7;--card:#ffffff;--ink:#1a1a18;--mut:#6f6b64;--acc:#8b5cf6;--acc2:#f59e0b;--line:#e8e5e0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 Georgia,'Times New Roman',serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.4rem}
+.sans{font-family:-apple-system,'Segoe UI',system-ui,sans-serif}
+
+/* top bar */
+.top{border-bottom:1px solid var(--line);background:var(--card)}
+.top-in{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-size:1.5rem;font-weight:700;letter-spacing:-.02em}
+.logo b{color:var(--acc)}
+.menu{display:flex;gap:1.8rem;font-size:.95rem}
+.menu a:hover{color:var(--acc)}
+.menu .cta{background:var(--ink);color:#fff;padding:.55rem 1.3rem;border-radius:999px;font-size:.88rem}
+.menu .cta:hover{background:var(--acc)}
+
+/* hero: split */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;padding:4.5rem 0 3.5rem;align-items:center}
+.hero .eyebrow{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--acc);font-weight:700;margin-bottom:1rem}
+.hero h1{font-size:clamp(2.2rem,4.6vw,3.4rem);line-height:1.12;font-weight:700;letter-spacing:-.02em}
+.hero h1 em{color:var(--acc);font-style:italic}
+.hero p.lede{color:var(--mut);margin:1.3rem 0 2rem;font-size:1.05rem;max-width:480px}
+.trust{display:flex;gap:2.2rem;margin-top:2.2rem;flex-wrap:wrap}
+.trust div b{font-size:1.5rem;display:block}
+.trust div span{font-size:.75rem;color:var(--mut);text-transform:uppercase;letter-spacing:.1em}
+
+/* product card stack (the other hero half) */
+.stack{display:grid;gap:1rem}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.3rem 1.5rem;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 14px rgba(30,25,20,.05);transition:transform .18s,box-shadow .18s}
+.pcard:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(30,25,20,.1)}
+.pcard .l{min-width:0}
+.pcard .id{font-size:.72rem;color:var(--mut);letter-spacing:.1em}
+.pcard .t{font-weight:700;font-size:1.08rem;margin:.15rem 0 .3rem}
+.pcard .f{font-size:.8rem;color:var(--mut)}
+.pcard .r{text-align:right;white-space:nowrap;margin-left:1rem}
+.pcard .p{font-size:1.45rem;font-weight:700;color:var(--acc)}
+.pcard .b{font-size:.72rem;color:var(--mut);text-transform:uppercase;letter-spacing:.08em}
+
+/* guarantee band */
+.band{background:var(--ink);color:#f5f2ec;padding:3.2rem 0;margin:2rem 0}
+.band .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;text-align:center}
+.band h3{font-size:1.05rem;margin-bottom:.5rem;color:#fff}
+.band p{font-size:.88rem;opacity:.75}
+.band .ic{font-size:1.6rem;margin-bottom:.8rem}
+
+/* collection grid */
+.sec-head{text-align:center;margin:3.4rem 0 2.2rem}
+.sec-head h2{font-size:2rem;font-weight:700;letter-spacing:-.02em}
+.sec-head p{color:var(--mut);margin-top:.4rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.2rem;padding-bottom:3.5rem}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.5rem;transition:transform .18s,box-shadow .18s}
+.gcard:hover{transform:translateY(-4px);box-shadow:0 12px 34px rgba(30,25,20,.12)}
+.gcard .price{font-size:1.5rem;font-weight:700;color:var(--acc)}
+.gcard .name{font-weight:700;font-size:1.02rem;margin:.45rem 0 .5rem}
+.gcard .spec{font-size:.82rem;color:var(--mut);margin-bottom:1rem}
+.gcard .view{font-size:.85rem;font-weight:600;color:var(--ink);border-bottom:2px solid var(--acc2);padding-bottom:2px}
+
+/* steps as elegant numbered rows */
+.steps{padding:1rem 0 3.5rem;max-width:760px;margin:0 auto}
+.step{display:flex;gap:1.6rem;padding:1.5rem 0;border-bottom:1px solid var(--line)}
+.step .num{font-size:2.2rem;color:var(--acc2);font-weight:700;line-height:1;font-style:italic}
+.step h3{font-size:1.1rem;margin-bottom:.3rem}
+.step p{color:var(--mut);font-size:.94rem}
+
+/* faq */
+.faq{max-width:760px;margin:0 auto 3.5rem}
+details{border-bottom:1px solid var(--line);padding:1.1rem .2rem}
+summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;display:flex;justify-content:space-between}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';color:var(--acc);font-size:1.3rem}
+details[open] summary::after{content:'–'}
+details p{color:var(--mut);margin-top:.6rem;font-size:.94rem}
+
+/* footer */
+.foot{background:var(--card);border-top:1px solid var(--line);padding:2.4rem 0;font-size:.85rem;color:var(--mut)}
+.foot .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;padding:3rem 0 2.5rem}
+  .band .wrap{grid-template-columns:1fr;gap:1.8rem}
+  .menu a:not(.cta){display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap top-in">
+    <a class="logo" href="#">Acc<b>Zone</b></a>
+    <nav class="menu sans">
+      <a href="#collection">Collection</a>
+      <a href="#guarantees">Guarantees</a>
+      <a href="#faq">FAQ</a>
+      <a class="cta" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">Visit store ↗</a>
+    </nav>
+  </div>
+</div>
+
+<header class="wrap hero">
+  <div>
+    <div class="eyebrow sans">Verified CoD Mobile accounts</div>
+    <h1>Every account, <em>hand-verified.</em> Every order, protected.</h1>
+    <p class="lede">A curated collection of Call of Duty Mobile accounts — delivered instantly, secured by ZeusX escrow, and backed by 632 five-star reviews since 2021.</p>
+    <div class="trust sans">
+      <div><b>5.0★</b><span>Rating</span></div>
+      <div><b>632</b><span>Reviews</span></div>
+      <div><b>630+</b><span>Delivered</span></div>
+      <div><b>2021</b><span>Selling since</span></div>
+    </div>
+  </div>
+  <div class="stack">
+    <a class="pcard" href="https://zeusx.com/game/call-of-duty-mobile/4/accounts/cl6000-or-level-343-or-1-primary-legend-or-130-epic-guns-or-characters-69-or-save-onactivision-only-or-andoridios-21069438" target="_blank" rel="noopener">
+      <div class="l"><div class="id sans">CL6000 · BEST VALUE</div><div class="t">Level 343 — Primary Legend</div><div class="f sans">130 epic guns · 69 characters</div></div>
+      <div class="r"><div class="p">$17</div><div class="b sans">View</div></div>
+    </a>
+    <a class="pcard" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+      <div class="l"><div class="id sans">CL5030</div><div class="t">Level 320 — Loaded</div><div class="f sans">250 epic guns · 94 characters</div></div>
+      <div class="r"><div class="p">$22</div><div class="b sans">View</div></div>
+    </a>
+    <a class="pcard" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+      <div class="l"><div class="id sans">CL4041</div><div class="t">Level 230 — Collector</div><div class="f sans">249 epic guns · 97 characters</div></div>
+      <div class="r"><div class="p">$23.90</div><div class="b sans">View</div></div>
+    </a>
+  </div>
+</header>
+
+<section class="band" id="guarantees">
+  <div class="wrap">
+    <div><div class="ic">🛡️</div><h3>Escrow protection</h3><p>Your payment is held by ZeusX until you confirm the account is exactly as described.</p></div>
+    <div><div class="ic">⚡</div><h3>Instant delivery</h3><p>Credentials arrive automatically when payment clears — no waiting, no human in the loop.</p></div>
+    <div><div class="ic">🔒</div><h3>Full ownership</h3><p>Complete credentials included. Bind your own email and take total control in minutes.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="collection">
+  <div class="sec-head">
+    <h2>The collection</h2>
+    <p>A sample — 30+ more in the full store.</p>
+  </div>
+  <div class="grid">
+    <a class="gcard" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+      <div class="price sans">$17.00</div><div class="name">Level 343 · 1 Primary Legend</div><div class="spec sans">130 epic guns · 69 characters · save on Activision</div><span class="view sans">View listing →</span>
+    </a>
+    <a class="gcard" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+      <div class="price sans">$17.00</div><div class="name">Level 201 · 3 Primary Legends</div><div class="spec sans">2 secondary legends · 89 epic guns</div><span class="view sans">View listing →</span>
+    </a>
+    <a class="gcard" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+      <div class="price sans">$17.20</div><div class="name">Level 204 · 3 Primary Legends</div><div class="spec sans">81 epic guns · 39 characters</div><span class="view sans">View listing →</span>
+    </a>
+    <a class="gcard" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+      <div class="price sans">$19.00</div><div class="name">Level 293 · Legends ×3</div><div class="spec sans">160 epic guns · multi-legend</div><span class="view sans">View listing →</span>
+    </a>
+    <a class="gcard" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+      <div class="price sans">$22.00</div><div class="name">Level 320 · 250 Epic Guns</div><div class="spec sans">1 primary legend · 94 characters</div><span class="view sans">View listing →</span>
+    </a>
+    <a class="gcard" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+      <div class="price sans">$23.90</div><div class="name">Level 230 · 249 Epic Guns</div><div class="spec sans">1 primary legend · 97 characters</div><span class="view sans">View listing →</span>
+    </a>
+  </div>
+</section>
+
+<section class="wrap" id="how">
+  <div class="sec-head"><h2>How it works</h2></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div><h3>Choose your account</h3><p>Browse the collection and pick the loadout that fits your budget — specs are listed in full.</p></div></div>
+    <div class="step"><div class="num">2</div><div><h3>Pay securely on ZeusX</h3><p>Checkout on the marketplace. Your money sits in escrow — protected until delivery is confirmed.</p></div></div>
+    <div class="step"><div class="num">3</div><div><h3>Receive credentials instantly</h3><p>The system hands over the login automatically. You'll be in-game within minutes.</p></div></div>
+    <div class="step"><div class="num">4</div><div><h3>Make it yours</h3><p>Bind your own email, set a new password, confirm delivery — done.</p></div></div>
+  </div>
+</section>
+
+<section class="wrap" id="faq">
+  <div class="sec-head"><h2>Questions, answered</h2></div>
+  <div class="faq">
+    <details><summary>Is buying an account safe?</summary><p>Through ZeusX escrow, yes — payment is released only after you confirm. All listings state exactly what's included.</p></details>
+    <details><summary>What if something's wrong?</summary><p>Open a dispute before confirming delivery: you get a replacement or a full refund. In 630+ orders it has come to that zero times.</p></details>
+    <details><summary>Can I request a custom account?</summary><p>Yes — message us on ZeusX with your target level, weapons and budget. We'll source it for you.</p></details>
+    <details><summary>How do payments work?</summary><p>All payments process on ZeusX — cards, PayPal and local methods, depending on your region.</p></details>
+  </div>
+</section>
+
+<footer class="foot sans">
+  <div class="wrap">
+    <span>© 2026 AccZone — a verified ZeusX seller</span>
+    <span>All orders processed securely on ZeusX · acczone.org</span>
+  </div>
+</footer>
+
+</body>
+</html>

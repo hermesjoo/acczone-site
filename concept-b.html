@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AccZone — CoD Mobile Accounts</title>
+<link rel="icon" href="favicon.svg">
+<style>
+/* B) ARCADE TERMINAL — command-line game UI: monospace everything, terminal window
+   chrome, typed-out effect, stat readouts like a HUD, ASCII dividers. */
+:root{--bg:#050807;--panel:#0a100c;--grn:#33ff66;--grn-dim:#1d8f42;--amb:#ffcc33;--txt:#c9f2d2;--dim:#5e8a6b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font:14px/1.6 "Cascadia Code",ui-monospace,Consolas,monospace;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+pre{font:inherit}
+.mono-wrap{max-width:980px;margin:0 auto;padding:1.2rem 1rem 4rem}
+
+/* terminal window */
+.term{border:1px solid var(--grn-dim);background:var(--panel);box-shadow:0 0 40px rgba(51,255,102,.07)}
+.term-bar{display:flex;gap:.5rem;align-items:center;border-bottom:1px solid var(--grn-dim);padding:.5rem .9rem;font-size:.75rem;color:var(--dim)}
+.term-bar .dots{display:flex;gap:.35rem}
+.term-bar .dots i{width:9px;height:9px;border-radius:50%;background:#123f22;border:1px solid var(--grn-dim)}
+.term-body{padding:1.4rem 1.2rem}
+.line{white-space:pre-wrap;word-break:break-word}
+.line::before{content:"> ";color:var(--grn)}
+.caret::after{content:"▊";color:var(--grn);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.k{color:var(--amb)}
+.hl{color:var(--grn)}
+.ok{color:var(--grn);font-weight:700}
+.dimt{color:var(--dim)}
+
+/* HUD stat strip */
+.hud{display:grid;grid-template-columns:repeat(4,auto);gap:1px;background:var(--grn-dim);border:1px solid var(--grn-dim);margin:1.4rem 0}
+.hud div{background:var(--panel);padding:.9rem 1.1rem}
+.hud .v{color:var(--grn);font-size:1.5rem;font-weight:700}
+.hud .l{font-size:.68rem;color:var(--dim);letter-spacing:.14em;text-transform:uppercase}
+
+/* inventory table */
+table{width:100%;border-collapse:collapse;font-size:.82rem;table-layout:fixed}
+th,td{border:1px solid #163823;padding:.55rem .7rem;text-align:left;overflow-wrap:anywhere}
+th{color:var(--amb);text-transform:uppercase;font-size:.7rem;letter-spacing:.12em;background:var(--panel)}
+td .tag{display:inline-block;border:1px solid var(--grn-dim);padding:.05rem .4rem;margin:.1rem .15rem .1rem 0;font-size:.7rem;color:var(--dim)}
+.price{color:var(--grn);font-weight:700}
+tr:hover td{background:#0d1a11}
+
+/* boot lines */
+.boot{color:var(--dim);font-size:.78rem;margin:.3rem 0}
+.boot b{color:var(--grn)}
+
+/* action buttons */
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.2rem}
+.btn{border:1px solid var(--grn);color:var(--grn);background:transparent;padding:.7rem 1.4rem;font:inherit;font-weight:700;cursor:pointer;letter-spacing:.04em;transition:all .15s}
+.btn:hover{background:var(--grn);color:#04120a;box-shadow:0 0 18px rgba(51,255,102,.4)}
+.btn.amb{border-color:var(--amb);color:var(--amb)}
+.btn.amb:hover{background:var(--amb);color:#150e02}
+
+/* q&a accordion as terminal blocks */
+.qa{border:1px solid #163823;margin-bottom:.7rem}
+.qa summary{cursor:pointer;padding:.8rem 1rem;color:var(--amb);list-style:none}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::before{content:"[+] "}
+.qa[open] summary::before{content:"[-] "}
+.qa p{padding:.2rem 1rem .9rem;color:var(--txt);font-size:.85rem}
+.qa p::before{content:"└─ ";color:var(--dim)}
+
+.foot{margin-top:2rem;color:var(--dim);font-size:.72rem;text-align:center}
+.scanline{position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,0,0,.12) 2px 4px)}
+@media(max-width:640px){.hud{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="scanline"></div>
+<div class="mono-wrap">
+
+<div class="term">
+  <div class="term-bar"><span class="dots"><i></i><i></i><i></i></span> acczone@zeusx: ~/store — ssh</div>
+  <div class="term-body">
+    <div class="line hl">acczone --init</div>
+    <div class="boot">loading seller profile <b>[OK]</b> · verifying trust chain <b>[OK]</b> · mounting inventory <b>[OK]</b></div>
+    <div class="line dimt">CoD Mobile account store — est. 2021, ZeusX Gold tier</div>
+    <div class="line">630+ accounts delivered. <span class="k">632 reviews. 5.0★ rating.</span> <span class="ok">Zero failed orders.</span></div>
+    <div class="line caret">browse --accounts</div>
+  </div>
+</div>
+
+<div class="hud">
+  <div><div class="v">5.0★</div><div class="l">Rating</div></div>
+  <div><div class="v">632</div><div class="l">Reviews</div></div>
+  <div><div class="v">630+</div><div class="l">Delivered</div></div>
+  <div><div class="v">24/7</div><div class="l">Support</div></div>
+</div>
+
+<div class="term">
+  <div class="term-bar"><span class="dots"><i></i><i></i><i></i></span> inventory.db — 34 listings</div>
+  <div class="term-body">
+    <table>
+      <thead><tr><th>ID</th><th>Account</th><th>Specs</th><th>Price</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>CL6000</td><td>LVL 343 · 1 Primary Legend</td><td><span class="tag">130 epic guns</span><span class="tag">69 chars</span></td><td class="price">$17.00</td><td><a href="https://zeusx.com/game/call-of-duty-mobile/4/accounts/cl6000-or-level-343-or-1-primary-legend-or-130-epic-guns-or-characters-69-or-save-onactivision-only-or-andoridios-21069438" target="_blank" rel="noopener" class="hl">buy→</a></td></tr>
+        <tr><td>CL5019</td><td>LVL 201 · 3 Primary Legends</td><td><span class="tag">2 sec. legends</span><span class="tag">89 epic guns</span></td><td class="price">$17.00</td><td><a href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener" class="hl">buy→</a></td></tr>
+        <tr><td>CL4112</td><td>LVL 204 · 3 Primary Legends</td><td><span class="tag">81 epic guns</span><span class="tag">39 chars</span></td><td class="price">$17.20</td><td><a href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener" class="hl">buy→</a></td></tr>
+        <tr><td>CL5030</td><td>LVL 320 · 1 Primary Legend</td><td><span class="tag">250 epic guns</span><span class="tag">94 chars</span></td><td class="price">$22.00</td><td><a href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener" class="hl">buy→</a></td></tr>
+        <tr><td>CL4041</td><td>LVL 230 · 1 Primary Legend</td><td><span class="tag">249 epic guns</span><span class="tag">97 chars</span></td><td class="price">$23.90</td><td><a href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener" class="hl">buy→</a></td></tr>
+        <tr><td colspan="5" style="text-align:center"><a href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener" class="k">[ +29 more listings — open full store ]</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="term">
+  <div class="term-bar"><span class="dots"><i></i><i></i><i></i></span> man acczone — how it works</div>
+  <div class="term-body">
+    <div class="line hl">acczone --how-it-works</div>
+    <div class="boot"><b>STEP 1</b> :: pick account from inventory above (or full store)</div>
+    <div class="boot"><b>STEP 2</b> :: pay on ZeusX → funds held in escrow, we can't touch them</div>
+    <div class="boot"><b>STEP 3</b> :: credentials delivered <b>AUTOMATICALLY</b> on payment — usually &lt; 60 sec</div>
+    <div class="boot"><b>STEP 4</b> :: log in → bind your email → change password → confirm delivery</div>
+    <div class="btns">
+      <a class="btn" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">OPEN STORE</a>
+      <a class="btn amb" href="#faq">READ FAQ</a>
+    </div>
+  </div>
+</div>
+
+<div class="term" id="faq">
+  <div class="term-bar"><span class="dots"><i></i><i></i><i></i></span> faq.log</div>
+  <div class="term-body">
+    <details class="qa"><summary>Is this safe? / account recovery?</summary><p>Escrow on ZeusX holds payment until you confirm. You receive full credentials and bind your own email — the previous owner loses access.</p></details>
+    <details class="qa"><summary>How fast is delivery?</summary><p>Automatic — credentials are displayed the moment payment clears. Most buyers are in-game within minutes.</p></details>
+    <details class="qa"><summary>Account doesn't match description?</summary><p>Dispute before confirming delivery → full refund or replacement. Escrow makes this enforceable.</p></details>
+    <details class="qa"><summary>Custom loadout requests?</summary><p>Message us on ZeusX: target BP level / weapons / characters + budget. We source it.</p></details>
+    <details class="qa"><summary>Payment methods?</summary><p>Whatever ZeusX supports in your region — cards, PayPal, local methods. All handled on ZeusX.</p></details>
+  </div>
+</div>
+
+<div class="foot">© 2026 ACCZONE · ALL ORDERS PROCESSED ON ZEUSX · ACCZONE.ORG</div>
+</div>
+</body>
+</html>
