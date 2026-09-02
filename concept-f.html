@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AccZone — CoD Mobile Accounts · Instant Delivery</title>
+<meta name="description" content="Verified CoD Mobile accounts. 5.0★ with 632 reviews on ZeusX, 630+ delivered, instant automatic delivery, escrow protected.">
+<link rel="icon" href="favicon.svg">
+<style>
+/* ════════════════════════════════════════════════════════════
+   F) SWISS BRUTALIST — polished
+   Type-driven, ink-on-paper, hard 2px rules, numbered index,
+   sticky inventory table with hover-invert, editorial margins.
+   ════════════════════════════════════════════════════════════ */
+:root{--paper:#f4f1ea;--ink:#141311;--acc:#ff3b00;--dim:#6b675e}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:15.5px/1.55 'Helvetica Neue',Helvetica,Arial,sans-serif;overflow-x:clip}
+*{max-width:100vw}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 1.4rem}
+.k{font-weight:900}
+
+/* ── header ── */
+.bar{position:sticky;top:0;z-index:90;display:flex;background:var(--paper);border-bottom:2px solid var(--ink)}
+.bar .logo{display:flex;align-items:center;padding:.95rem 1.3rem;border-right:2px solid var(--ink);font-size:1.22rem;font-weight:900;letter-spacing:-.04em}
+.bar .logo i{font-style:normal;color:var(--acc)}
+.idx{display:flex;margin-left:auto}
+.idx a{display:flex;align-items:center;gap:.45rem;padding:0 1.15rem;border-left:2px solid var(--ink);font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;transition:background .12s,color .12s}
+.idx a span{color:var(--acc);font-weight:900}
+.idx a:hover{background:var(--ink);color:var(--paper)}
+.idx a:hover span{color:var(--paper)}
+.idx a.hot{background:var(--acc);color:#fff}
+.idx a.hot span{color:#fff}
+
+/* ── headline ── */
+.mega{padding:4rem 1.4rem 2.8rem;border-bottom:2px solid var(--ink)}
+.mega h1{font-size:clamp(2.7rem,8.4vw,6.8rem);line-height:.94;text-transform:uppercase;letter-spacing:-.035em;font-weight:900;overflow-wrap:break-word}
+.mega .wrap{overflow:hidden}
+.mega h1 .hollow{color:transparent;-webkit-text-stroke:2.5px var(--ink)}
+.mega h1 .acc{color:var(--acc)}
+.mega .lede{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;margin-top:2.2rem}
+.mega .lede p{max-width:480px;font-size:1.02rem;line-height:1.6}
+.mega .lede p mark{background:var(--acc);color:#fff;padding:.05rem .32rem;font-weight:700}
+.mega .lede .stamp{justify-self:end;align-self:start;border:2px solid var(--ink);padding:.85rem 1.1rem;font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;transform:rotate(2.5deg);box-shadow:4px 4px 0 var(--ink);background:#fff}
+.mega .lede .stamp b{color:var(--acc);display:block;font-size:1.05rem}
+
+/* ── stats strip ── */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:2px solid var(--ink);background:#fff}
+.strip div{padding:1.35rem 1.4rem;border-right:2px solid var(--ink)}
+.strip div:last-child{border-right:none}
+.strip .v{font-size:clamp(1.5rem,3.2vw,2.3rem);font-weight:900;letter-spacing:-.03em}
+.strip .v.acc{color:var(--acc)}
+.strip .l{font-size:.64rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);margin-top:.25rem}
+
+/* ── section headers ── */
+.sh{display:flex;justify-content:space-between;align-items:baseline;padding:2.3rem 1.4rem 1rem}
+.sh h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:900;text-transform:uppercase;letter-spacing:-.02em}
+.sh h2 b{color:var(--acc)}
+.sh span{font-size:.7rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+
+/* ── inventory rows ── */
+.list{border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:92px 1.25fr 1fr 110px 86px;gap:1.1rem;align-items:center;padding:1.15rem 1.4rem;border-bottom:2px solid var(--ink);transition:background .1s,color .1s;min-width:0}
+.row *{min-width:0}
+.row .id{font-weight:900;font-size:.86rem;letter-spacing:.03em}
+.row .t{font-weight:800;font-size:1.04rem;letter-spacing:-.01em}
+.row .f{font-size:.8rem;color:var(--dim)}
+.row .p{font-size:1.4rem;font-weight:900;text-align:right;letter-spacing:-.02em}
+.row .go{font-size:.72rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;text-align:right;color:var(--acc)}
+.row:hover{background:var(--ink);color:var(--paper)}
+.row:hover .f{color:#b5b0a5}
+.row:hover .go{color:#ff9a75}
+.row:hover .id{color:#fff}
+.list .more{display:block;text-align:center;padding:1.05rem;font-size:.8rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase;background:var(--ink);color:var(--paper)}
+.list .more b{color:var(--acc)}
+
+/* ── manifesto grid ── */
+.mani{display:grid;grid-template-columns:repeat(2,1fr);border-bottom:2px solid var(--ink)}
+.mc{padding:1.9rem 1.5rem;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);position:relative}
+.mc:nth-child(2n){border-right:none}
+.mc:nth-child(3),.mc:nth-child(4){border-bottom:none}
+.mc .no{display:inline-block;background:var(--ink);color:var(--paper);font-size:.68rem;font-weight:900;letter-spacing:.18em;padding:.22rem .6rem}
+.mc h3{font-size:1.28rem;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;margin:.7rem 0 .45rem}
+.mc p{font-size:.92rem;line-height:1.6;max-width:430px}
+.mc:hover{background:#ece8df}
+
+/* ── FAQ ── */
+.faq{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.faq details{border-bottom:2px solid var(--ink)}
+.faq details:last-child{border-bottom:none}
+.faq summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:64px 1fr 40px;align-items:center;padding:1.05rem 1.4rem;font-weight:800;font-size:1.02rem;text-transform:uppercase;letter-spacing:-.01em;transition:background .1s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .q{color:var(--acc);font-weight:900;font-size:.8rem}
+.faq summary .pm{font-size:1.55rem;font-weight:900;color:var(--acc);text-align:right;line-height:1}
+.faq details[open] summary{background:var(--ink);color:var(--paper)}
+.faq details[open] summary .pm{color:var(--paper)}
+.faq details[open] summary .q{color:#ff9a75}
+.faq p{padding:1.1rem 1.4rem 1.35rem calc(1.4rem + 64px + 1rem);max-width:680px;font-size:.93rem;border-top:2px solid var(--ink);background:#fff}
+
+/* ── CTA ── */
+.cta{display:block;background:var(--acc);color:#fff;text-align:center;padding:2.7rem 1rem 2.9rem;transition:background .15s}
+.cta .l1{font-size:clamp(1.5rem,4.6vw,2.8rem);font-weight:900;text-transform:uppercase;letter-spacing:-.025em;line-height:1.02}
+.cta .l2{font-size:.78rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase;margin-top:.65rem;opacity:.9}
+.cta:hover{background:var(--ink)}
+.cta:hover .l2 b{color:var(--acc)}
+
+footer{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1.15rem 1.4rem;font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+
+@media(max-width:380px){
+  .idx a{padding:0 .4rem;font-size:.55rem}
+  .bar .logo{font-size:.82rem;padding:.85rem .5rem}
+}
+@media(max-width:860px){
+  .idx a{padding:0 .55rem;font-size:.6rem;gap:.25rem}
+  .idx a:nth-child(3){display:none}
+  .idx a span{display:none}
+  .bar .logo{font-size:.95rem;padding:.9rem .65rem}
+  .mega .lede{grid-template-columns:1fr}
+  .mega .lede .stamp{justify-self:start}
+  .strip{grid-template-columns:repeat(2,1fr)}
+  .strip div{overflow:hidden}
+  .strip .v{font-size:1.2rem}
+  .strip .l{letter-spacing:.1em;font-size:.56rem}
+  .strip div:nth-child(2){border-right:none}
+  .strip div:nth-child(-n+2){border-bottom:2px solid var(--ink)}
+  .row{grid-template-columns:76px 1fr 92px;grid-template-rows:auto auto;row-gap:.25rem}
+  .row .id{grid-area:1/1}.row .t{grid-area:1/2}.row .p{grid-area:1/3}.row .f{grid-area:2/2}.row .go{grid-area:2/3}
+  .mani{grid-template-columns:1fr}
+  .mc{border-right:none!important;border-bottom:2px solid var(--ink)!important}
+  .mc:last-child{border-bottom:none!important}
+  .faq summary{grid-template-columns:44px 1fr 34px;padding-left:1rem;padding-right:1rem}
+  .faq p{padding-left:1rem}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="bar">
+  <a class="logo" href="#top">ACC<i>ZONE</i>®</a>
+  <nav class="idx">
+    <a href="#inv"><span>01</span>Inventory</a>
+    <a href="#why"><span>02</span>Why</a>
+    <a href="#faq"><span>03</span>FAQ</a>
+    <a class="hot" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">Store&nbsp;↗</a>
+  </nav>
+</header>
+
+<section class="mega wrap-full">
+  <div class="wrap">
+    <h1>Cod Mobile<br><span class="hollow">accounts.</span><br>No <span class="acc">bullshit.</span></h1>
+    <div class="lede">
+      <p>Verified accounts. <mark>Automatic instant delivery.</mark> Escrow-protected payments on ZeusX — the marketplace where 630+ players already bought from us and <b>632 of them left five stars.</b></p>
+      <div class="stamp">ZeusX verified seller<b>SINCE 2021</b></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="strip">
+    <div><div class="v">5.0★</div><div class="l">Rating</div></div>
+    <div><div class="v acc">632</div><div class="l">Reviews</div></div>
+    <div><div class="v">630+</div><div class="l">Delivered</div></div>
+    <div><div class="v acc">0</div><div class="l">Failed orders</div></div>
+  </div>
+</div>
+
+<div class="sh" id="inv"><h2>Inven<b>tory</b></h2><span>Live listings · ZeusX verified</span></div>
+<div class="list">
+  <a class="row" href="https://zeusx.com/game/call-of-duty-mobile/4/accounts/cl6000-or-level-343-or-1-primary-legend-or-130-epic-guns-or-characters-69-or-save-onactivision-only-or-andoridios-21069438" target="_blank" rel="noopener">
+    <span class="id">CL·6000</span><span class="t">Level 343 — Primary Legend</span><span class="f">130 epic guns · 69 characters</span><span class="p">$17</span><span class="go">View →</span>
+  </a>
+  <a class="row" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+    <span class="id">CL·5019</span><span class="t">Level 201 — Triple Legend</span><span class="f">3 primary + 2 secondary · 89 epic guns</span><span class="p">$17</span><span class="go">View →</span>
+  </a>
+  <a class="row" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+    <span class="id">CL·4112</span><span class="t">Level 204 — Triple Legend</span><span class="f">3 primary legends · 81 epic guns · 39 chars</span><span class="p">$17.20</span><span class="go">View →</span>
+  </a>
+  <a class="row" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+    <span class="id">CL·4146</span><span class="t">Level 293 — Multi-Legend</span><span class="f">1 primary + 2 secondary · 160 epic guns</span><span class="p">$19</span><span class="go">View →</span>
+  </a>
+  <a class="row" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+    <span class="id">CL·5030</span><span class="t">Level 320 — Armory Heavy</span><span class="f">250 epic guns · 94 characters</span><span class="p">$22</span><span class="go">View →</span>
+  </a>
+  <a class="row" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+    <span class="id">CL·4041</span><span class="t">Level 230 — Collector</span><span class="f">249 epic guns · 97 characters</span><span class="p">$23.90</span><span class="go">View →</span>
+  </a>
+  <a class="more" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">+ 28 more listings — <b>open full store</b> ↗</a>
+</div>
+
+<div class="sh" id="why"><h2>Why <b>AccZone</b></h2><span>Read this before buying anywhere</span></div>
+<div class="mani">
+  <div class="mc"><span class="no">A</span><h3>Instant delivery</h3><p>Credentials are released automatically the second your payment clears. No human step, no waiting, no "DM for delivery".</p></div>
+  <div class="mc"><span class="no">B</span><h3>Escrow protection</h3><p>ZeusX holds the money until you confirm the account matches its listing. If it doesn't — replacement or full refund, enforced.</p></div>
+  <div class="mc"><span class="no">C</span><h3>Full ownership</h3><p>Complete credentials included. Bind your own email, set a new password — the account becomes 100% yours, unrecoverable by anyone.</p></div>
+  <div class="mc"><span class="no">D</span><h3>Custom sourcing</h3><p>Specific BP level, mythic weapon, character set? Message us on ZeusX with your budget — we source it and list it for you.</p></div>
+</div>
+
+<div class="sh" id="faq"><h2>F·A·<b>Q</b></h2><span>Straight answers</span></div>
+<div class="faq">
+  <details><summary><span class="q">Q.01</span>Is buying an account safe?<span class="pm">+</span></summary><p>Yes — because ZeusX escrow holds your payment until you confirm delivery, and you immediately bind your own email, making recovery by the previous owner impossible.</p></details>
+  <details><summary><span class="q">Q.02</span>How fast is delivery?<span class="pm">+</span></summary><p>Automatic. Credentials appear the moment payment clears — usually under a minute from checkout.</p></details>
+  <details><summary><span class="q">Q.03</span>What if something is wrong?<span class="pm">+</span></summary><p>Dispute on ZeusX before confirming delivery: you get a replacement or a full refund. In 630+ orders it has never come to that.</p></details>
+  <details><summary><span class="q">Q.04</span>Payment methods?<span class="pm">+</span></summary><p>Everything ZeusX supports in your region — cards, PayPal, local methods. Checkout always stays on ZeusX, never on this page.</p></details>
+  <details><summary><span class="q">Q.05</span>Can I request a specific account?<span class="pm">+</span></summary><p>Yes. Send us the target level, weapons, characters and budget via ZeusX message — we'll source it and list it for you.</p></details>
+</div>
+
+<a class="cta" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+  <span class="l1">Browse all accounts →</span>
+  <span class="l2">630+ sold · <b>zero</b> failed orders</span>
+</a>
+
+<footer><span>© 2026 AccZone — verified ZeusX seller</span><span>All orders via ZeusX · acczone.org</span></footer>
+</body>
+</html>

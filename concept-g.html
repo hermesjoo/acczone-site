@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AccZone — CoD Mobile Accounts · Instant Delivery</title>
+<meta name="description" content="Verified CoD Mobile accounts. 5.0★ with 632 reviews on ZeusX, 630+ delivered, instant automatic delivery, escrow protected.">
+<link rel="icon" href="favicon.svg">
+<style>
+/* ════════════════════════════════════════════════════════════
+   G) MOBILE-APP SHOWCASE — phone-first product site
+   Sticky app-bar, card feed like an app store, bottom tab bar
+   navigation, FAB for store, iOS-style segmented sections.
+   ════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#0f1115;--surf:#171a21;--surf2:#1e222c;--line:#262b37;
+  --ink:#eef1f7;--mut:#8b93a5;--acc:#4f8cff;--acc2:#37d0a2;
+  --amber:#ffb648;--red:#ff5d6c;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+.screen{max-width:520px;margin:0 auto;min-height:100vh;background:var(--bg);position:relative;padding-bottom:76px}
+
+/* ── app bar ── */
+.appbar{position:sticky;top:0;z-index:80;display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.1rem;background:rgba(15,17,21,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.appbar .brand{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.06rem}
+.appbar .brand .ic{width:34px;height:34px;border-radius:10px;background:linear-gradient(140deg,var(--acc),var(--acc2));display:grid;place-items:center;font-weight:900;font-size:.95rem;color:#fff}
+.appbar .status{display:flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;color:var(--acc2)}
+.appbar .status i{width:7px;height:7px;border-radius:50%;background:var(--acc2);box-shadow:0 0 8px var(--acc2);animation:beat 2s infinite}
+@keyframes beat{50%{opacity:.35}}
+
+/* ── hero inside screen ── */
+.hero{padding:1.8rem 1.25rem 1.6rem}
+.hero .chip{display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);border:1px solid rgba(255,182,72,.4);background:rgba(255,182,72,.08);padding:.32rem .8rem;border-radius:999px;margin-bottom:1rem}
+.hero h1{font-size:1.9rem;line-height:1.18;letter-spacing:-.02em;font-weight:800}
+.hero h1 span{background:linear-gradient(120deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mut);font-size:.95rem;margin-top:.7rem}
+.hero .cta{display:flex;gap:.7rem;margin-top:1.4rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.85rem 1.5rem;border-radius:14px;font-weight:800;font-size:.9rem;transition:transform .15s,filter .15s}
+.btn.p{background:linear-gradient(140deg,var(--acc),#3a6fe0);color:#fff;box-shadow:0 6px 20px rgba(79,140,255,.3);flex:1}
+.btn.p:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn.s{background:var(--surf2);color:var(--ink);border:1px solid var(--line)}
+.btn.s:hover{border-color:var(--acc)}
+
+/* ── stat cards (swipe row) ── */
+.scroller{display:flex;gap:.75rem;overflow-x:auto;padding:1rem 1.25rem 1.2rem;scroll-snap-type:x mandatory;scrollbar-width:none}
+.scroller::-webkit-scrollbar{display:none}
+.scard{flex:0 0 118px;scroll-snap-align:start;background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:1rem .9rem;text-align:center}
+.scard .v{font-size:1.35rem;font-weight:900;letter-spacing:-.02em}
+.scard .l{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-top:.25rem}
+.scard.g .v{color:var(--acc2)}.scard.b .v{color:var(--acc)}.scard.a .v{color:var(--amber)}.scard.r .v{color:var(--red)}
+
+/* ── section title with see-all ── */
+.st{display:flex;justify-content:space-between;align-items:center;padding:0 1.25rem .9rem}
+.st h2{font-size:1.12rem;font-weight:800;letter-spacing:-.01em}
+.st a{font-size:.78rem;font-weight:700;color:var(--acc)}
+
+/* ── product feed cards ── */
+.feed{display:grid;gap:.85rem;padding:0 1.25rem}
+.pcard{display:grid;grid-template-columns:56px 1fr auto;gap:.95rem;align-items:center;background:var(--surf);border:1px solid var(--line);border-radius:18px;padding:1rem;transition:border-color .18s,transform .18s}
+.pcard:hover{border-color:var(--acc);transform:translateY(-2px)}
+.pcard .rank{width:56px;height:56px;border-radius:14px;background:linear-gradient(150deg,var(--surf2),#242a38);display:grid;place-items:center;text-align:center;border:1px solid var(--line)}
+.pcard .rank b{display:block;font-size:1.02rem;font-weight:900;color:var(--acc)}
+.pcard .rank span{font-size:.56rem;letter-spacing:.12em;color:var(--mut);text-transform:uppercase}
+.pcard .mid .id{font-size:.64rem;font-weight:800;letter-spacing:.16em;color:var(--mut);text-transform:uppercase}
+.pcard .mid .t{font-weight:700;font-size:.97rem;margin:.14rem 0 .32rem}
+.pcard .mid .tags{display:flex;flex-wrap:wrap;gap:.3rem}
+.pcard .mid .tags span{font-size:.64rem;font-weight:700;color:var(--mut);background:var(--surf2);border:1px solid var(--line);padding:.1rem .5rem;border-radius:999px}
+.pcard .right{text-align:right}
+.pcard .right .p{font-size:1.18rem;font-weight:900;color:var(--acc2)}
+.pcard .right .go{font-size:.66rem;font-weight:800;letter-spacing:.1em;color:var(--acc);text-transform:uppercase}
+
+/* ── feature tiles 2x2 ── */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;padding:0 1.25rem}
+.tile{background:var(--surf);border:1px solid var(--line);border-radius:18px;padding:1.05rem;transition:border-color .18s}
+.tile:hover{border-color:var(--acc2)}
+.tile .em{font-size:1.4rem}
+.tile h3{font-size:.86rem;font-weight:800;margin:.45rem 0 .25rem}
+.tile p{font-size:.76rem;color:var(--mut);line-height:1.5}
+
+/* ── reviews strip ── */
+.reviews{display:flex;gap:.75rem;overflow-x:auto;padding:0 1.25rem 1rem;scroll-snap-type:x mandatory;scrollbar-width:none}
+.reviews::-webkit-scrollbar{display:none}
+.rev{flex:0 0 240px;scroll-snap-align:start;background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:1rem}
+.rev .stars{color:var(--amber);font-size:.8rem;letter-spacing:.12em}
+.rev p{font-size:.82rem;color:var(--ink);margin:.5rem 0 .6rem;line-height:1.5}
+.rev .who{font-size:.7rem;color:var(--mut);font-weight:700}
+.rev .verified{font-size:.62rem;color:var(--acc2);font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+
+/* ── faq list rows ── */
+.faq{padding:0 1.25rem;display:grid;gap:.6rem}
+.faq details{background:var(--surf);border:1px solid var(--line);border-radius:14px}
+.faq summary{cursor:pointer;list-style:none;padding:.9rem 1.05rem;font-weight:700;font-size:.9rem;display:flex;justify-content:space-between;align-items:center;gap:.8rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'⌄';font-size:1.1rem;color:var(--acc);transition:transform .2s;flex-shrink:0}
+.faq details[open] summary::after{transform:rotate(180deg)}
+.faq p{padding:0 1.05rem .95rem;font-size:.83rem;color:var(--mut)}
+
+/* ── bottom tab bar + FAB ── */
+.tabbar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:520px;display:flex;align-items:flex-end;justify-content:space-around;background:rgba(15,17,21,.92);backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:.5rem .6rem calc(.5rem + env(safe-area-inset-bottom));z-index:100}
+.tab{display:flex;flex-direction:column;align-items:center;gap:.18rem;font-size:.62rem;font-weight:700;color:var(--mut);padding:.4rem .8rem;border-radius:12px;transition:color .15s}
+.tab .ti{font-size:1.15rem}
+.tab:hover{color:var(--ink)}
+.fab{display:grid;place-items:center;width:58px;height:58px;margin-bottom:.4rem;border-radius:20px;background:linear-gradient(140deg,var(--acc),#3a6fe0);color:#fff;font-size:1.4rem;box-shadow:0 8px 26px rgba(79,140,255,.45);transition:transform .15s}
+.fab:hover{transform:translateY(-3px) scale(1.04)}
+
+.foot{padding:2rem 1.25rem 1rem;text-align:center;color:var(--mut);font-size:.7rem}
+@media(min-width:521px){.screen{border-inline:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<div class="screen">
+
+<header class="appbar">
+  <div class="brand"><span class="ic">A</span>AccZone</div>
+  <div class="status"><i></i>ONLINE · INSTANT DELIVERY</div>
+</header>
+
+<section class="hero">
+  <div class="chip">🏆 ZeusX Gold Seller</div>
+  <h1>CoD Mobile accounts, <span>delivered in seconds.</span></h1>
+  <p>Verified, escrow-protected, automatic. 630+ players, 632 five-star reviews, zero failed orders since 2021.</p>
+  <div class="cta">
+    <a class="btn p" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">Open the store</a>
+    <a class="btn s" href="#accounts">Browse ↓</a>
+  </div>
+</section>
+
+<div class="scroller">
+  <div class="scard g"><div class="v">5.0★</div><div class="l">Rating</div></div>
+  <div class="scard b"><div class="v">632</div><div class="l">Reviews</div></div>
+  <div class="scard a"><div class="v">630+</div><div class="l">Delivered</div></div>
+  <div class="scard r"><div class="v">0</div><div class="l">Failed</div></div>
+  <div class="scard g"><div class="v">24/7</div><div class="l">Support</div></div>
+</div>
+
+<div class="st" id="accounts"><h2>Featured accounts</h2><a href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">See all 34 →</a></div>
+<div class="feed">
+  <a class="pcard" href="https://zeusx.com/game/call-of-duty-mobile/4/accounts/cl6000-or-level-343-or-1-primary-legend-or-130-epic-guns-or-characters-69-or-save-onactivision-only-or-andoridios-21069438" target="_blank" rel="noopener">
+    <div class="rank"><b>343</b><span>LVL</span></div>
+    <div class="mid"><div class="id">CL·6000 · Best value</div><div class="t">Primary Legend</div><div class="tags"><span>1 legend</span><span>130 epic guns</span><span>69 chars</span></div></div>
+    <div class="right"><div class="p">$17</div><div class="go">View →</div></div>
+  </a>
+  <a class="pcard" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+    <div class="rank"><b>201</b><span>LVL</span></div>
+    <div class="mid"><div class="id">CL·5019</div><div class="t">Triple Legend</div><div class="tags"><span>3+2 legends</span><span>89 epic guns</span></div></div>
+    <div class="right"><div class="p">$17</div><div class="go">View →</div></div>
+  </a>
+  <a class="pcard" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+    <div class="rank"><b>204</b><span>LVL</span></div>
+    <div class="mid"><div class="id">CL·4112</div><div class="t">Triple Legend</div><div class="tags"><span>3 legends</span><span>81 epic guns</span><span>39 chars</span></div></div>
+    <div class="right"><div class="p">$17.20</div><div class="go">View →</div></div>
+  </a>
+  <a class="pcard" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+    <div class="rank"><b>320</b><span>LVL</span></div>
+    <div class="mid"><div class="id">CL·5030</div><div class="t">Armory Heavy</div><div class="tags"><span>1 legend</span><span>250 epic guns</span><span>94 chars</span></div></div>
+    <div class="right"><div class="p">$22</div><div class="go">View →</div></div>
+  </a>
+  <a class="pcard" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
+    <div class="rank"><b>230</b><span>LVL</span></div>
+    <div class="mid"><div class="id">CL·4041</div><div class="t">Collector</div><div class="tags"><span>1 legend</span><span>249 epic guns</span><span>97 chars</span></div></div>
+    <div class="right"><div class="p">$23.90</div><div class="go">View →</div></div>
+  </a>
+</div>
+
+<div class="st" id="why" style="margin-top:1.8rem"><h2>Why AccZone</h2></div>
+<div class="tiles">
+  <div class="tile"><div class="em">⚡</div><h3>Instant delivery</h3><p>Credentials auto-release the second payment clears — in-game within minutes.</p></div>
+  <div class="tile"><div class="em">🛡️</div><h3>Escrow protected</h3><p>ZeusX holds your money until you confirm. Not happy → full refund.</p></div>
+  <div class="tile"><div class="em">🔒</div><h3>Full ownership</h3><p>Bind your own email, change password — the account is 100% yours.</p></div>
+  <div class="tile"><div class="em">🎯</div><h3>Custom orders</h3><p>Specific level, weapon or characters? Message us — we source it.</p></div>
+</div>
+
+<div class="st" style="margin-top:1.8rem"><h2>Player reviews</h2><span style="font-size:.78rem;color:var(--mut)">632 × ★★★★★</span></div>
+<div class="reviews">
+  <div class="rev"><div class="stars">★★★★★</div><p>"Account exactly as described, got the login instantly. Will buy again."</p><div class="who">ZeusX buyer · <span class="verified">verified purchase</span></div></div>
+  <div class="rev"><div class="stars">★★★★★</div><p>"Fast delivery, great communication. Highly recommended seller."</p><div class="who">ZeusX buyer · <span class="verified">verified purchase</span></div></div>
+  <div class="rev"><div class="stars">★★★★★</div><p>"Legit seller, smooth transaction. Account had everything listed."</p><div class="who">ZeusX buyer · <span class="verified">verified purchase</span></div></div>
+</div>
+
+<div class="st" id="faq" style="margin-top:1.8rem"><h2>FAQ</h2></div>
+<div class="faq">
+  <details><summary>Is buying an account safe?</summary><p>Through ZeusX escrow, yes — payment is held until you confirm delivery, and you bind your own email immediately, so nobody can recover it.</p></details>
+  <details><summary>How fast is delivery?</summary><p>Automatic — credentials appear the moment payment clears, usually under a minute.</p></details>
+  <details><summary>What if the account doesn't match?</summary><p>Dispute before confirming: replacement or full refund, enforced by escrow. Never needed in 630+ orders.</p></details>
+  <details><summary>Can I request a custom account?</summary><p>Yes — message us on ZeusX with target level, weapons, characters and budget. We'll source it.</p></details>
+</div>
+
+<div class="foot">© 2026 AccZone · All orders via ZeusX · acczone.org</div>
+
+</div>
+
+<nav class="tabbar">
+  <a class="tab" href="#top"><span class="ti">🏠</span>Home</a>
+  <a class="tab" href="#accounts"><span class="ti">🎮</span>Accounts</a>
+  <a class="fab" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener" aria-label="Open store">🛒</a>
+  <a class="tab" href="#why"><span class="ti">✨</span>Why</a>
+  <a class="tab" href="#faq"><span class="ti">❓</span>FAQ</a>
+</nav>
+</body>
+</html>
