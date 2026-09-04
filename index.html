@@ -155,6 +155,18 @@ footer{border-top:1px solid var(--line);padding:1.7rem;text-align:center;color:v
 @media(prefers-reduced-motion:reduce){
   .sky .grid,.sky .stars,.marquee-in,.marquee{animation:none}
 }
+
+/* ── reviews ── */
+.rvgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:1.2rem}
+.rv{margin:0;border:1px solid var(--line);border-radius:16px;padding:1.3rem 1.25rem 1.1rem;background:linear-gradient(200deg,rgba(38,232,255,.06),rgba(255,46,196,.05) 60%,rgba(11,1,33,.35));position:relative;overflow:hidden}
+.rv::before{{content:'';position:absolute;inset:0;border-radius:16px;padding:1px;background:linear-gradient(140deg,var(--cyan),transparent 40%,transparent 60%,var(--mag));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.35}}
+.rv blockquote{{margin:0 0 .9rem;font-size:.95rem;line-height:1.55;color:#f4eaff}}
+.rv figcaption{{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;border-top:1px dashed rgba(255,255,255,.12);padding-top:.75rem}}
+.rv .who{{font-weight:800;font-size:.8rem;color:var(--cyan);letter-spacing:.04em}}
+.rv .stars{{color:var(--gold);font-size:.8rem;letter-spacing:.12em;text-shadow:0 0 10px rgba(255,209,102,.45)}}
+.rv cite{{font-style:normal;font-size:.68rem;color:var(--mut);letter-spacing:.14em;text-transform:uppercase}}
+@media(max-width:640px){{.rvgrid{{grid-template-columns:1fr 1fr;gap:.8rem}}.rv{{padding:1rem .9rem}}.rv blockquote{{font-size:.85rem}}}}
+@media(max-width:460px){{.rvgrid{{grid-template-columns:1fr}}}}
 </style>
 </head>
 <body>
@@ -180,7 +192,7 @@ footer{border-top:1px solid var(--line);padding:1.7rem;text-align:center;color:v
 <nav class="nav"><div class="wrap nav-in">
   <a class="nav-logo" href="#top">ACC·ZONE</a>
   <div class="nav-links">
-    <a href="#accounts">Accounts</a><a href="#why">Why</a><a href="#faq">FAQ</a>
+    <a href="#accounts">Accounts</a><a href="#why">Why</a><a href="#reviews">Reviews</a> <a href="#faq">FAQ</a>
     <a class="hot" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">Store ↗</a>
   </div>
 </div></nav>
@@ -237,6 +249,22 @@ footer{border-top:1px solid var(--line);padding:1.7rem;text-align:center;color:v
     <div class="fcol"><div class="ic">🎯</div><div><h3>Custom sourcing</h3><p>Specific BP level, mythic weapon, character set? Message us with your budget and we'll source it for you.</p></div></div>
   </div>
 </div></section>
+
+<section id="reviews" style="background:rgba(21,4,48,.35);border-block:1px solid var(--line)">
+<div class="wrap">
+  <div class="sec-head"><h2>Wall of love</h2><div class="sub">634 verified reviews · 5.0★ average · real ZeusX buyers</div></div>
+  <div class="rvgrid">
+    <figure class="rv"><blockquote>“10/10 will recommend to friends and family! Saves lots of grind but keeps the gaming on! 🔥🔥🔥🔥🔥”</blockquote><figcaption><span class="who">DV**********28</span><span class="stars">★★★★★</span><cite>verified ZeusX buyer</cite></figcaption></figure>
+    <figure class="rv"><blockquote>“Fast and Solid Transaction — he&#x27;s your number 1 man for accounts.”</blockquote><figcaption><span class="who">Gh******de</span><span class="stars">★★★★★</span><cite>verified ZeusX buyer</cite></figcaption></figure>
+    <figure class="rv"><blockquote>“This guy is very helpful and they will give replacement if something bad happens.”</blockquote><figcaption><span class="who">Ad********************ta</span><span class="stars">★★★★★</span><cite>verified ZeusX buyer</cite></figcaption></figure>
+    <figure class="rv"><blockquote>“So quick and easy!!! Couldn&#x27;t recommend enough — he&#x27;s so helpful too!”</blockquote><figcaption><span class="who">xX*****Xx</span><span class="stars">★★★★★</span><cite>verified ZeusX buyer</cite></figcaption></figure>
+    <figure class="rv"><blockquote>“VERY GREAT SERVICE ONE OF THE BEST. FAST DELIVERY AND ACCURATE INFORMATION.”</blockquote><figcaption><span class="who">Ic**SB</span><span class="stars">★★★★★</span><cite>verified ZeusX buyer</cite></figcaption></figure>
+    <figure class="rv"><blockquote>“Got exactly what was listed, ease of login. Nice vendors.”</blockquote><figcaption><span class="who">jo********de</span><span class="stars">★★★★★</span><cite>verified ZeusX buyer</cite></figcaption></figure>
+    <figure class="rv"><blockquote>“Everything works, seller has great communication. Will be back again!”</blockquote><figcaption><span class="who">Er*ie</span><span class="stars">★★★★★</span><cite>verified ZeusX buyer</cite></figcaption></figure>
+    <figure class="rv"><blockquote>“Very helpful and honest seller. Will recommend him!”</blockquote><figcaption><span class="who">ra*********on</span><span class="stars">★★★★★</span><cite>verified ZeusX buyer</cite></figcaption></figure>
+  </div>
+</div>
+</section>
 
 <section id="faq"><div class="wrap">
   <div class="sec-head"><h2>Transmission · FAQ</h2></div>
