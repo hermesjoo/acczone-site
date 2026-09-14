@@ -47,7 +47,8 @@ a{color:inherit;text-decoration:none}
 .toolbar select{background:var(--panel);border:1px solid var(--line);border-radius:999px;color:var(--ink);padding:.6rem 1rem;font-size:.85rem;outline:none;cursor:pointer}
 
 /* grid of cards */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:1.2rem;padding-bottom:3rem;align-items:start}
+.grid{columns:268px;column-gap:1.2rem;padding-bottom:3rem}
+.grid .card{break-inside:avoid;margin-bottom:1.2rem;display:inline-flex;width:100%}
 .card{border:1px solid var(--line);border-radius:16px;background:linear-gradient(165deg,rgba(38,232,255,.07),rgba(255,46,196,.06) 65%,rgba(11,1,33,.4));overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,border-color .18s,box-shadow .18s;position:relative}
 .card:hover{transform:translateY(-4px);border-color:var(--mag);box-shadow:0 16px 40px rgba(255,46,196,.2)}
 .card .ph{position:relative;aspect-ratio:16/10;background:#0d0224;overflow:hidden}
@@ -84,7 +85,8 @@ a{color:inherit;text-decoration:none}
 footer{border-top:1px solid var(--line);padding:1.5rem;text-align:center;color:var(--mut);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase}
 
 @media(max-width:640px){
-  .grid{grid-template-columns:repeat(2,1fr);gap:.7rem}
+  .grid{columns:2;column-gap:.7rem}
+  .grid .card{margin-bottom:.7rem}
   .card .bd{padding:.7rem .75rem}
   .card .p{font-size:1.15rem}
   .card .t{font-size:.74rem}
