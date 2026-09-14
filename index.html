@@ -130,6 +130,8 @@ section{padding:3.6rem 0}
 .pc .feats{display:flex;flex-wrap:wrap;gap:.4rem}
 .pc .feats span{font-size:.68rem;font-weight:700;color:#ffb3ec;border:1px solid rgba(255,46,196,.5);border-radius:999px;padding:.16rem .6rem;background:rgba(255,46,196,.07)}
 .pc .go{display:inline-flex;align-items:center;gap:.45rem;margin-top:1.15rem;color:var(--cyan);font-weight:800;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}
+.pcimg{margin:-1.45rem -1.35rem 1rem;border-radius:15px 15px 0 0;overflow:hidden;aspect-ratio:16/10;background:#0d0224;border-bottom:1px solid var(--line)}
+.pcimg img{width:100%;height:100%;object-fit:cover;display:block}
 .pc .go::after{content:'▸';transition:transform .2s}
 .pc:hover .go::after{transform:translateX(4px)}
 
@@ -245,6 +247,7 @@ fetch('catalog.json?v='+Date.now()).then(r=>r.json()).then(d=>{
   };
   pg.innerHTML=idxs.map(i=>{const o=d[i];return `
     <a class="pc" href="${o.url}" target="_blank" rel="noopener">
+      ${o.thumb||o.img?`<div class="pcimg"><img loading="lazy" src="${o.thumb||o.img}" alt="" onerror="this.parentElement.style.display='none'"></div>`:''}
       <div class="row1"><span class="id">${o.level||'CoDM'}</span><span class="p">$${o.price.toFixed(2)}</span></div>
       <div class="t">${o.title.replace(/&/g,'&amp;').replace(/</g,'&lt;')}</div>
       <div class="feats">${chips(o.title).map(c=>`<span>${c.replace(/</g,'&lt;')}</span>`).join('')}</div>

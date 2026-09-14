@@ -47,10 +47,11 @@ a{color:inherit;text-decoration:none}
 .toolbar select{background:var(--panel);border:1px solid var(--line);border-radius:999px;color:var(--ink);padding:.6rem 1rem;font-size:.85rem;outline:none;cursor:pointer}
 
 /* grid of cards */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:1.2rem;padding-bottom:3rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:1.2rem;padding-bottom:3rem;align-items:start}
 .card{border:1px solid var(--line);border-radius:16px;background:linear-gradient(165deg,rgba(38,232,255,.07),rgba(255,46,196,.06) 65%,rgba(11,1,33,.4));overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,border-color .18s,box-shadow .18s;position:relative}
 .card:hover{transform:translateY(-4px);border-color:var(--mag);box-shadow:0 16px 40px rgba(255,46,196,.2)}
 .card .ph{position:relative;aspect-ratio:16/10;background:#0d0224;overflow:hidden}
+.card .noimg{width:100%;height:100%;display:grid;place-items:center;font-weight:900;font-style:italic;font-size:1.3rem;color:var(--mut);background:radial-gradient(circle at 50% 40%,rgba(255,46,196,.14),transparent 70%),linear-gradient(165deg,#190538,#0d0224)}
 .card .ph img{width:100%;height:100%;object-fit:cover;display:block}
 .card .lvl{position:absolute;top:.6rem;left:.6rem;background:rgba(11,1,33,.85);border:1px solid var(--cyan);color:var(--cyan);font-size:.66rem;font-weight:800;letter-spacing:.14em;padding:.2rem .55rem;border-radius:999px;text-transform:uppercase}
 .card .stock{position:absolute;top:.6rem;right:.6rem;background:rgba(11,1,33,.85);border:1px solid var(--gold);color:var(--gold);font-size:.62rem;font-weight:800;padding:.2rem .5rem;border-radius:999px}
@@ -162,7 +163,9 @@ function render(){
   grid.innerHTML=items.map(o=>`
     <article class="card" data-id="${o.id}">
       <div class="ph" onclick="openModal('${o.id}')">
-        <img loading="lazy" src="${esc(o.thumb||o.img)}" alt="${esc(o.title).slice(0,80)}" onerror="this.style.display='none'">
+        ${o.thumb||o.img
+          ?`<img loading="lazy" src="${esc(o.thumb||o.img)}" alt="${esc(o.title).slice(0,80)}" onerror="this.remove()">`
+          :`<div class="noimg">${esc(o.level)||'CoDM'}</div>`}
         <span class="lvl">${esc(o.level)||'CoDM'}</span>
         ${o.stock>1?`<span class="stock">×${o.stock}</span>`:''}
       </div>
@@ -178,7 +181,7 @@ function render(){
 
 function toggleDesc(btn){
   const card=btn.closest('.card'); card.classList.toggle('open');
-  btn.textContent=card.classList.contains('open')?'details ▴':'details ▾';
+  btn.textContent=card.classList.contains('open')?'More details ▴':'More details ▾';
 }
 function openModal(id){
   const o=DATA.find(x=>x.id===id); if(!o) return;
