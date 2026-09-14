@@ -103,7 +103,7 @@ a{color:inherit;text-decoration:none}
 .nav-links a.hot{background:var(--mag);color:#fff;box-shadow:var(--glow-m)}
 
 /* ── stats ── */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin:3.2rem 0 1rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin:3.2rem auto 1rem;max-width:900px;justify-content:center}
 .stat{position:relative;padding:1.5rem 1rem 1.3rem;text-align:center;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,rgba(255,46,196,.06),rgba(38,232,255,.05))}
 .stat::before,.stat::after{content:'';position:absolute;width:14px;height:14px;border:2px solid var(--cyan);opacity:.7}
 .stat::before{top:-1px;left:-1px;border-right:none;border-bottom:none;border-radius:14px 0 0 0}
@@ -222,45 +222,42 @@ footer{border-top:1px solid var(--line);padding:1.7rem;text-align:center;color:v
 
 <section id="accounts"><div class="wrap">
   <div class="sec-head"><h2>Featured inventory</h2><div class="sub">live listings — tap any card to open ZeusX</div></div>
-  <div class="pgrid">
-    <a class="pc" href="https://zeusx.com/game/call-of-duty-mobile/4/accounts/level9-or-2epic-guns-or-870cp-or-725kd-or-3mvp-or-7characters-or-lifetime-warranty-and-automatic-delivery-or-167-46297" target="_blank" rel="noopener">
-      <div class="row1"><span class="id">LVL·9</span><span class="p">$3.00</span></div>
-      <div class="t">Level 9 — 2epic guns · 870CP · 7.25!K/D · 3MVP · 7characters · LifeTime warranty</div>
-      <div class="feats"><span>2epic guns</span><span>870CP</span><span>7.25!K/D</span></div>
-      <span class="go">View listing</span>
-    </a>
-    <a class="pc" href="https://zeusx.com/game/call-of-duty-mobile/4/accounts/cl601-or-level150-or-5legends-or-140epic-guns-or-74characters-or-save-onactivision-only-or-andoridios-179186" target="_blank" rel="noopener">
-      <div class="row1"><span class="id">#CL601</span><span class="p">$166.90</span></div>
-      <div class="t">#CL601 — Level150 · 5LEGENDs · 140epic guns · 74characters · save on:Activision</div>
-      <div class="feats"><span>5LEGENDs</span><span>140epic guns</span><span>74characters</span></div>
-      <span class="go">View listing</span>
-    </a>
-    <a class="pc" href="https://zeusx.com/game/call-of-duty-mobile/4/accounts/cl5023-or-level-142-or-4-primary-legend-or-2-secondary-legend-or-66-epic-guns-or-characters-34-or-save-onactivision-only-or-andoridios-13625502" target="_blank" rel="noopener">
-      <div class="row1"><span class="id">#CL5023</span><span class="p">$16.00</span></div>
-      <div class="t">#CL5023 — Level 142 · 4 Primary legend · 2 Secondary legend · 66 epic guns · cha</div>
-      <div class="feats"><span>4 Primary legend</span><span>2 Secondary legend</span><span>66 epic guns</span></div>
-      <span class="go">View listing</span>
-    </a>
-    <a class="pc" href="https://zeusx.com/game/call-of-duty-mobile/4/accounts/cl286-or-level150-or-16epic-guns-or-24characters-or-save-onactivision-only-or-andoridios-151174" target="_blank" rel="noopener">
-      <div class="row1"><span class="id">#CL286</span><span class="p">$23.90</span></div>
-      <div class="t">#CL286 — Level150 · 16epic guns · 24characters · save on:Activision only · Ando</div>
-      <div class="feats"><span>16epic guns</span><span>24characters</span></div>
-      <span class="go">View listing</span>
-    </a>
-    <a class="pc" href="https://zeusx.com/game/call-of-duty-mobile/4/accounts/cl2165-or-level-227-or-128-epic-guns-or-65-characters-or-save-onactivision-only-or-andoridios-2063331" target="_blank" rel="noopener">
-      <div class="row1"><span class="id">#CL2165</span><span class="p">$33.00</span></div>
-      <div class="t">#CL2165 — Level 227 · 128 epic guns · 65 characters · save on:Activision only · </div>
-      <div class="feats"><span>128 epic guns</span><span>65 characters</span></div>
-      <span class="go">View listing</span>
-    </a>
+  <div class="pgrid" id="pgrid">
     <a class="pc" href="https://zeusx.com/seller/acczone-25504" target="_blank" rel="noopener">
-      <div class="row1"><span class="id">+739</span><span class="p">→</span></div>
-      <div class="t">Full store on ZeusX</div>
+      <div class="row1"><span class="id">Full store</span><span class="p">→</span></div>
+      <div class="t">All live accounts on ZeusX</div>
       <div class="feats"><span>every budget</span><span>custom orders</span></div>
       <span class="go">Open store</span>
     </a>
   </div>
-</section>
+</div>
+<script>
+fetch('catalog.json?v='+Date.now()).then(r=>r.json()).then(d=>{
+  const pg=document.getElementById('pgrid');
+  // diverse 6: cheapest, 3 mid-spread, premium
+  const pick=(a,i)=>a[Math.min(i,a.length-1)];
+  const idxs=[...new Set([0,Math.floor(d.length*0.25),Math.floor(d.length*0.5),Math.floor(d.length*0.75),d.length-1])].slice(0,5);
+  const chips=t=>{
+    const out=[];for(const x of t.split('|')){const xl=x.trim().toLowerCase();
+      if(!x.trim()||/warranty|delivery/.test(xl))continue;
+      if(/legend|epic|mythic|character|k\/d|cp|bp/.test(xl)){out.push(x.trim().slice(0,22));}
+      if(out.length>=3)break;}return out.length?out:['instant delivery'];
+  };
+  pg.innerHTML=idxs.map(i=>{const o=d[i];return `
+    <a class="pc" href="${o.url}" target="_blank" rel="noopener">
+      <div class="row1"><span class="id">${o.level||'CoDM'}</span><span class="p">$${o.price.toFixed(2)}</span></div>
+      <div class="t">${o.title.replace(/&/g,'&amp;').replace(/</g,'&lt;')}</div>
+      <div class="feats">${chips(o.title).map(c=>`<span>${c.replace(/</g,'&lt;')}</span>`).join('')}</div>
+      <span class="go">View listing</span>
+    </a>`}).join('')+`
+    <a class="pc" href="accounts.html">
+      <div class="row1"><span class="id">All ${d.length} accounts</span><span class="p">→</span></div>
+      <div class="t">Browse the full catalog with photos &amp; details</div>
+      <div class="feats"><span>search</span><span>sort by price/level</span></div>
+      <span class="go">Open catalog</span>
+    </a>`;
+}).catch(()=>{});
+</script>
 
 <section id="why" style="background:rgba(21,4,48,.35);border-block:1px solid var(--line)"><div class="wrap">
   <div class="sec-head"><h2>Why AccZone</h2><div class="sub">every order escrow-protected on ZeusX</div></div>

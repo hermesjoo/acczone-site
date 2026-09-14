@@ -59,7 +59,7 @@ a{color:inherit;text-decoration:none}
 .card .p{font-size:1.45rem;font-weight:900;font-style:italic;color:var(--gold);text-shadow:0 0 13px rgba(255,209,102,.4)}
 .card .id{font-size:.62rem;font-weight:800;letter-spacing:.2em;color:var(--mut);text-transform:uppercase}
 .card .t{font-size:.86rem;font-weight:600;line-height:1.4;margin:.45rem 0 .55rem;color:#efe0ff;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.card .more{font-size:.78rem;color:var(--cyan);cursor:pointer;font-weight:700;letter-spacing:.06em;align-self:flex-start;background:none;border:none;padding:0}
+.card .more{font-size:.78rem;color:var(--cyan);cursor:pointer;font-weight:700;letter-spacing:.06em;align-self:flex-start;background:none;border:none;padding:0;margin:.35rem 0 .8rem}
 .card .desc{font-size:.8rem;color:var(--mut);line-height:1.5;white-space:pre-line;display:none;margin:.3rem 0 .4rem}
 .card.open .desc{display:block}
 .card .go{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--mag);color:#fff;font-weight:800;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;padding:.72rem 1rem;border-radius:12px;box-shadow:var(--glow-m);transition:.15s;text-align:center}
@@ -169,7 +169,7 @@ function render(){
       <div class="bd">
         <div class="row1"><span class="p">$${o.price.toFixed(2)}</span><span class="id">#${o.id.slice(0,6)}</span></div>
         <div class="t">${esc(o.title)}</div>
-        <button class="more" onclick="toggleDesc(this)">details ▾</button>
+        <button class="more" onclick="toggleDesc(this)">More details ▾</button>
         <div class="desc">${esc(o.desc)}</div>
         <a class="go" href="${esc(o.url)}" target="_blank" rel="noopener">Proceed to store</a>
       </div>
